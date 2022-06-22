@@ -1,0 +1,17 @@
+<launch>
+
+    <param name="move_base_en" type="bool" value="False" />
+    <param name="waypoint_num" type="int" value="0" />
+    <param name ="goal_reached" type="bool" value="False"/>
+    <param name ="stop_robot" type="bool" value="False"/>
+	<include file="$(find simple_navigation_goals)/launch/Schnieder_Elec.launch"/>
+    <include file="$(find simple_navigation_goals)/launch/turtlebot3_navigation.launch"/>
+    <include file="$(find simple_navigation_goals)/launch/turtlebot3_gazebo_rviz.launch"/>
+    <node pkg="simple_navigation_goals" type="turtlebot_stop.py" name="turtlebot_obstacle" output="screen" >
+
+    </node>
+    <!--<group unless="$(arg stop_robot)">
+    <include file="$(find simple_navigation_goals)/launch/movebase_seq.launch"/> 
+    </group>-->
+ 
+</launch>

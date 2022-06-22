@@ -1,0 +1,2 @@
+uint16 waypoint_number
+bool move_base_enabled
